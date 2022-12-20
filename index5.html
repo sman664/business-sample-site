@@ -1,0 +1,373 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+
+<meta name="theme-color" content="lightblue">
+
+<style>
+
+:root {
+	--iphone: 340px;
+	--fontreg: 4em;
+	
+	/* theme colors */
+	--background-color: black;
+	--color: white;
+	
+	--navbar-height: 0.75rem;
+}
+
+h1, h2{
+	padding: 0;
+	margin: 0;
+	font-size: 5em;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+
+#navbar{
+	position: relative;
+	
+	top: 0;
+	
+	width: 100vw;
+	height: var(--navbar-height);
+	
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+	margin: 0;
+	
+	background-color: lightblue;
+	
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#navbar-mobile {
+	display: none;
+}
+
+
+#navbar-links {
+	display: block;
+}
+
+
+	/* flexbox container */
+	#mainContent>div {
+		width: 100vw; 
+		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-content: flex-start;
+		
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+/* the flex box elements */
+	#mainContent>div>a {
+		text-decoration:none;
+		color: black;
+	
+		margin:0;
+		padding:0;
+		width: 45vw;
+		height: 45vh;
+		border: 1px solid red;
+		
+		border-radius: 20px;
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		
+		box-shadow: 6px 6px 0 0;
+		
+	}
+
+
+
+/* for screens that are iphone 12 mini size */
+
+@media only screen and (max-width: 375px) {
+
+	#navbar{
+
+	}
+	
+	h1{
+		font-size: 2rem;
+	}
+
+	body>h1:after{
+		font-size: 2rem;
+		content: "\1F3AE";
+	}
+	
+	h2 {
+		font-size: 2rem;
+	}
+	
+	#navbar-mobile {
+		width:100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-left: 20px;
+	}
+	
+	#navbar-mobile svg {
+		width: 2rem;
+		height: 2rem;
+		
+		align-self: center;
+		
+		margin: 0;
+		
+		/*border: 1px solid red;*/
+	}
+	#navbar-title {
+		width: 80%;
+		text-align: center;
+	}
+	
+	#navbar-links-mobile {
+		position: fixed;
+		top: 0;
+		left: 0;
+	
+		background-color: darkblue;
+		color: yellow;
+	
+		font-size: 2rem;
+	
+		width: 80vw;
+		height: 100vh;
+		z-index: 10;
+	}
+
+	#navbar-links-mobile ul {
+		list-style: square inside;
+		
+		margin: 5%;
+	
+		width: 90%;
+		height: 50vh;
+	
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		
+		border: 1px solid red;
+}
+	
+	#navbar-links {
+		display: none;
+	}
+	
+	
+	/* main content section on iphone */
+	
+	#mainContent {
+		
+	}
+	
+	#mainContent>h2 {
+		margin: 0.5rem 2.5%;
+		/*border: 1px solid red;*/
+		text-align: left;
+	}
+	
+	/* flexbox container */
+	#mainContent>div {
+		width: 100vw; 
+		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-content: flex-start;
+		
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+	
+
+	
+	/* the flex box elements */
+	#mainContent>div>a {
+		text-decoration:none;
+		color: black;
+	
+		margin:0;
+		padding:0;
+		width: 45vw;
+		height: 45vh;
+		border: 1px solid red;
+		
+		border-radius: 20px;
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		
+		box-shadow: 6px 6px 0 0;
+		
+	}
+	
+	#mainContent>div>a:hover {
+		background-color: black;
+		color: white;
+	}
+	
+	#mainContent>div>a>h2 {
+		font-size: 30vw;
+	}
+}
+
+</style>
+
+<body>
+
+<!-- navbar component -->
+<section id="navbar">
+	<div id="navbar-mobile">
+		<svg onclick="showNavlinks()" height="100%" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+		<div id="navbar-title"><h1>Sam's Rugs</h1></div>
+	</div>
+	<div id="navbar-links">
+		<ul>
+			<li>home</li>
+			<li>about</li>
+			<li>info</li>
+			<li>shop</li>
+		</ul>
+	</div>
+</section>
+
+
+
+<!-- main content component -->
+<section id="mainContent">
+	<h2>my first section</h2>
+	<div>
+	<!-- you can write unicode hex chars in HTML using &#x and ; as wrapper -->
+		<a></a>
+		<a></a>
+		<a></a>
+		<a></a>
+	</div>
+
+</section>
+
+</body>
+
+
+<script>
+
+window.onload = (event) => {
+	populateFlexContent();
+}
+
+
+
+function populateFlexContent(){
+
+	const placeholders = {
+		symbols: ["&#x1f5a8;", "&#x1F9EE;", "&#x1f5a5;", "&#x1f5c3;"],
+		headers: ["printer", "calculator", "database", "invoices"]
+	}
+	
+	//wrapper tag for each flex item
+	let wrapperElem = "a";
+	
+	let newHeader = document.createElement("h1");
+
+	let newSymbol = document.createElement("h2");
+
+	
+	let totalDivs = document.getElementById("mainContent").getElementsByTagName("div")[0].getElementsByTagName(wrapperElem).length;
+
+	
+	for(let i=0;i<totalDivs; i++){
+	let copyNewHeader = newHeader.cloneNode(true);
+	let copyNewSymbol = newSymbol.cloneNode(true);
+	
+	copyNewSymbol.innerHTML += placeholders.symbols[i];
+	copyNewHeader.innerHTML += placeholders.headers[i];
+	
+let divFlexItem = document.getElementById("mainContent").getElementsByTagName("div")[0].getElementsByTagName(wrapperElem)[i]
+
+divFlexItem.addEventListener("touchstart", function () {
+	divFlexItem.style.backgroundColor="black";
+	divFlexItem.style.color="white";
+});
+
+divFlexItem.addEventListener("touchend", function () {
+	divFlexItem.style.backgroundColor="white";
+	divFlexItem.style.color="black";
+});
+
+divFlexItem.href = "https://google.com"
+divFlexItem.appendChild(copyNewHeader);
+divFlexItem.appendChild(copyNewSymbol);
+}
+}
+
+
+function showNavlinks() {
+let mynavlinks = document.getElementById("navbar-links").cloneNode(true);
+
+
+// attach predefined css 
+mynavlinks.id = "navbar-links-mobile";
+
+let X_div = document.createElement("div");
+let X_div_nested = document.createElement("div");
+
+X_div_nested.innerHTML = "X";
+X_div_nested.style = "padding: 5px";
+
+X_div_nested.addEventListener("click", closeNavlinks);
+
+X_div.appendChild(X_div_nested);
+
+
+
+X_div.style=`
+position: relative;
+width: 90%;
+height: 10%;
+
+display: flex;
+justify-content: flex-start;
+align-items: center;
+
+box-sizing: border-box;
+
+margin: 0% 5%;
+
+border: 1px solid red;
+`;
+
+
+mynavlinks.insertBefore(X_div, mynavlinks.firstChild);
+document.body.appendChild(mynavlinks);
+
+
+
+}
+
+function closeNavlinks() {
+	document.getElementById("navbar-links-mobile").remove();
+}
+
+</script>
